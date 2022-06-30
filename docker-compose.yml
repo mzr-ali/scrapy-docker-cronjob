@@ -1,0 +1,15 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ../cronjob
+      dockerfile: Dockerfile
+    environment:
+      - OUTPUT=quotes
+    volumes:
+      - "scraper_data:/app/data"
+      - "./output:/app/output"
+
+volumes:
+  scraper_data:
+
